@@ -1,10 +1,141 @@
 ---
 sidebar-position: 2
 ---
-import Button from '@site/src/components/Button.tsx'
+import Button from '@site/src/components/Button.tsx';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 # Button
 
-The button comes in a few fun sizes and variants.
 
-<Button onClick={() => {}}>The button</Button>
+The button comes in a few fun sizes and variants. The button is not extensively tested.
+In fact, it is not tested at all. But some of these look kinda nice.
+
+<br/>
+
+:::note
+
+This **Button** components _actually_ shown here is made with normal css, because adding and 
+configuring Tailwind was more work than I was willing to sacrifice for this at the time of
+writing.
+
+:::
+
+
+### Variants
+
+<Tabs>
+    <TabItem value="Primary" label="Primary">
+        <Button variant="primary">Button</Button>
+    </TabItem>
+    <TabItem value="Secondary" label="Secondary">
+        <Button variant="secondary">Button</Button>
+    </TabItem>
+    <TabItem value="Outline" label="Outline">
+        <Button variant="outline">Button</Button>
+    </TabItem>
+</Tabs>
+
+<br/>
+
+
+### Sizes
+
+<Tabs>
+    <TabItem value="Small" label="Small">
+        <Button size="small">Button</Button>
+    </TabItem>
+    <TabItem value="Medium" label="Medium">
+        <Button size="medium">Button</Button>
+    </TabItem>
+    <TabItem value="Large" label="Large">
+        <Button size="large">Button</Button>
+    </TabItem>
+
+</Tabs>
+
+<br/>
+---
+<br/>
+
+## Usage
+
+### Parameters
+
+- `variant`: The variant of the button, **`primary`**, `secondary`, or `outline`.
+- `size`: The size of the button. Can be `small`, **`medium`**, or `large`.
+- `disabled`: Disables the button. Default **`false`**.
+- `onClick`: function. 
+
+### Example
+
+```tsx title="page.tsx"
+import Button from './Button';
+
+export default function page() {
+  return (
+    <Button variant="primary" size="medium" onClick={() => console.log('Button clicked')}>
+      Click me
+    </Button>
+  );
+}
+```
+
+<br/>
+
+### Code
+
+
+```tsx title="Button.tsx"
+import React from 'react';
+
+interface ButtonProps {
+  variant?: 'primary' | 'secondary' | 'outline';
+  size?: 'small' | 'medium' | 'large';
+  disabled?: boolean;
+  onClick?: () => void;
+  children: React.ReactNode;
+}
+
+const getButtonClasses = ({variant, size, disabled}: 
+    {variant: string, size: string, disabled: boolean}) => {
+    const baseClasses = 'rounded-3xl';
+  
+    const variantClasses = {
+      primary: 'bg-red-600 text-white hover:bg-red-700 focus:ring-red-500',
+      secondary: 'bg-gray-500 text-white hover:bg-gray-600 focus:ring-gray-500',
+      outline: 'bg-transparent border border-red-500 text-red-500 \
+                hover:bg-red-600 focus:ring-red-500',
+    }[variant];
+  
+    const sizeClasses = {
+      small: 'px-2 py-1 text-xs',
+      medium: 'px-4 py-2 text-sm',
+      large: 'px-6 py-3 text-base',
+    }[size];
+  
+    const disabledClasses = disabled
+      ? 'opacity-50 cursor-not-allowed'
+      : 'hover:shadow-md';
+  
+    return `${baseClasses} ${variantClasses} ${sizeClasses} ${disabledClasses}`;
+  };
+
+export default function Button({
+        variant = 'primary',
+        size = 'medium',
+        disabled = false,
+        onClick = () => {},
+        children,
+    }: ButtonProps) {
+  return (
+    <button
+      className={getButtonClasses({variant, size, disabled})}
+      onClick={onClick}
+      disabled={disabled}
+    >
+      {children}
+    </button>
+  );
+};
+```

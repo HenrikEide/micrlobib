@@ -8,11 +8,6 @@
 @tailwind components;
 @tailwind utilities;
 
-a {
-  display: flex;
-  align-items: center;
-}
-
 /* You can override the default Infima variables here. */
 :root {
   --ifm-color-primary: #f33939;
