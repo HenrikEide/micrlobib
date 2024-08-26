@@ -65,7 +65,7 @@ const config: Config = {
   themeConfig: {
     // Replace with your project's social card
     navbar: {
-      title: 'Salutations',
+      title: 'MicrloBib',
       logo: {
         alt: 'My Site Logo',
         src: 'img/favicon.ico',
