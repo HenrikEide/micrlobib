@@ -52,19 +52,17 @@ const config: Config = {
     // Replace with your project's social card
     image: 'img/docusaurus-social-card.jpg',
     navbar: {
-      title: 'My Site',
+      title: 'MicLObib',
       logo: {
         alt: 'My Site Logo',
-        src: 'img/logo.svg',
+        src: 'img/favicon.ico',
       },
       items: [
         {
-          type: 'docSidebar',
-          sidebarId: 'tutorialSidebar',
+          type: 'html',
           position: 'left',
-          label: 'Tutorial',
+          value: '<h2 style="margin-bottom:0px;margin-left:16px;">Micr<span style="color:#dc141a">LO</span> Komponent Bibliotek</h2>',
         },
-        {to: '/blog', label: 'Blog', position: 'left'},
         {
           href: 'https://github.com/henrikeide',
           label: 'GitHub',
