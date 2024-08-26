@@ -6,7 +6,7 @@ slug: /
 # Intro
 
 
-This is a mock component library for testing and displaying components for a particular unnamed project.
+This is a mock component library for testing and displaying components for a particular project.
 
 :::warning
 
@@ -25,7 +25,7 @@ The client has an extensive catalogue of colors used in their branding:
 
 ## Component details
 
-The components are written in React, with Typescript and Tailwind CSS. No external libraries are needed, just copy paste them into your project.
+The components are written in React, with Typescript and Tailwind CSS. Beyond this no external libraries are needed, just copy paste them into your project.
 
 
 ### Requirements

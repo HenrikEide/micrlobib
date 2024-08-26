@@ -8,10 +8,10 @@ const config: Config = {
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
-  url: 'https://your-docusaurus-site.example.com',
+  url: 'https://henrikeide.github.io',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/',
+  baseUrl: '/micrlobib/',
 
   plugins: [
     async function myPlugin(context, options) {
@@ -74,7 +74,7 @@ const config: Config = {
         {
           type: 'html',
           position: 'left',
-          value: '<h1 style="margin-bottom:0px;margin-left:16px;font-size:22px;font-weight:bold;">Micr<span style="color:#dc141a">LO</span> Komponentbibliotek</h1>',
+          value: '<h1 style="margin-bottom:0px;margin-left:16px;font-size:22px;font-weight:bold;">Micr<span style="color:#dc141a">LO</span> Component Library</h1>',
         },
         {
           href: 'https://github.com/henrikeide',
