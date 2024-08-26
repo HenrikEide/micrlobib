@@ -50,9 +50,8 @@ const config: Config = {
 
   themeConfig: {
     // Replace with your project's social card
-    image: 'img/docusaurus-social-card.jpg',
     navbar: {
-      title: 'MicLObib',
+      title: 'MicrLObib',
       logo: {
         alt: 'My Site Logo',
         src: 'img/favicon.ico',
@@ -61,7 +60,7 @@ const config: Config = {
         {
           type: 'html',
           position: 'left',
-          value: '<h2 style="margin-bottom:0px;margin-left:16px;">Micr<span style="color:#dc141a">LO</span> Komponent Bibliotek</h2>',
+          value: '<h2 style="margin-bottom:0px;margin-left:16px;">Micr<span style="color:#dc141a">LO</span> Komponentbibliotek</h2>',
         },
         {
           href: 'https://github.com/henrikeide',
