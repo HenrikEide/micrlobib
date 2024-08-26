@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmicr_l_obib=self.webpackChunkmicr_l_obib||[]).push([[235],{8552:e=>{e.exports=JSON.parse('{"name":"docusaurus-plugin-content-pages","id":"default"}')}}]);
