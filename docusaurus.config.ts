@@ -14,17 +14,17 @@ const config: Config = {
   baseUrl: '/',
 
   plugins: [
-    // async function myPlugin(context, options) {
-    //   return {
-    //     name: "docusaurus-tailwindcss",
-    //     configurePostCss(postcssOptions) {
-    //       // Appends TailwindCSS and AutoPrefixer.
-    //       postcssOptions.plugins.push(require("tailwindcss"));
-    //       postcssOptions.plugins.push(require("autoprefixer"));
-    //       return postcssOptions;
-    //     },
-    //   };
-    // },
+    async function myPlugin(context, options) {
+      return {
+        name: "docusaurus-tailwindcss",
+        configurePostCss(postcssOptions) {
+          // Fucks with all the other css and I cant be bothered to fix it.
+          // postcssOptions.plugins.push(require("tailwindcss"));
+          postcssOptions.plugins.push(require("autoprefixer"));
+          return postcssOptions;
+        },
+      };
+    },
   ],
 
   // GitHub pages deployment config.
@@ -74,7 +74,7 @@ const config: Config = {
         {
           type: 'html',
           position: 'left',
-          value: '<h1 style="margin-left:16px;font-size:22px;font-weight:bold;">Micr<span style="color:#dc141a">LO</span> Komponentbibliotek</h1>',
+          value: '<h1 style="margin-bottom:0px;margin-left:16px;font-size:22px;font-weight:bold;">Micr<span style="color:#dc141a">LO</span> Komponentbibliotek</h1>',
         },
         {
           href: 'https://github.com/henrikeide',
@@ -122,7 +122,7 @@ const config: Config = {
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} MicLO Component Library. Built with Docusaurus.`,
+      copyright: `No Copyright © ${new Date().getFullYear()} MicrLO Component Library. Built with Docusaurus.`,
     },
     prism: {
       theme: prismThemes.github,
