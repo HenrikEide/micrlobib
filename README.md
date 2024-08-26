@@ -13,7 +13,7 @@ To set up the development environment, follow these steps:
 2. `npm install`
 3. `npm run start`
 
-Feel free to drop a PR.
+Then branch and drop a PR.
 
 ---
 ### Logo
