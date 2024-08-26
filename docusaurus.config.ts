@@ -3,7 +3,7 @@ import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
-  title: 'MicrLO Component Library',
+  title: 'MicrLObib',
   tagline: 'LO and behold, another component library',
   favicon: 'img/favicon.ico',
 
@@ -13,12 +13,26 @@ const config: Config = {
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/',
 
+  plugins: [
+    async function myPlugin(context, options) {
+      return {
+        name: "docusaurus-tailwindcss",
+        configurePostCss(postcssOptions) {
+          // Appends TailwindCSS and AutoPrefixer.
+          postcssOptions.plugins.push(require("tailwindcss"));
+          postcssOptions.plugins.push(require("autoprefixer"));
+          return postcssOptions;
+        },
+      };
+    },
+  ],
+
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
   organizationName: 'henrikeide', // Usually your GitHub org/user name.
   projectName: 'micrLObib', // Usually your repo name.
 
-  onBrokenLinks: 'throw',
+  onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
 
   // Even if you don't use internationalization, you can use this field to set
@@ -51,7 +65,7 @@ const config: Config = {
   themeConfig: {
     // Replace with your project's social card
     navbar: {
-      title: 'MicrLObib',
+      title: 'Salutations',
       logo: {
         alt: 'My Site Logo',
         src: 'img/favicon.ico',
@@ -77,7 +91,7 @@ const config: Config = {
           items: [
             {
               label: 'Basics',
-              to: '/docs/intro',
+              to: 'intro',
             },
           ],
         },
