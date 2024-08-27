@@ -6,11 +6,11 @@ slug: /
 # Intro
 
 
-This is a mock component library for testing and displaying components for a particular project.
+This is a mock component library for documenting components for a particular project. It is a personal project I made mostly just to try out [Docusaurus](https://docusaurus.io).
 
 :::warning
 
-This is work in progress, and exists mainly as a proof of concept.
+This is unofficial work in progress, and exists mainly as a proof of concept.
 
 :::
 
